@@ -1,0 +1,79 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.settings__header,
+.settings__card {
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.settings__header h2,
+.settings__card h3 {
+  margin: 0;
+}
+
+.settings__header p {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+}
+
+.settings__card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.settings__field span {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.settings__field input {
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+}
+
+.settings__field input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.14);
+}
+
+.settings__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.settings__message {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.settings__themes {
+  display: flex;
+  gap: 10px;
+}

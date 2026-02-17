@@ -1,0 +1,153 @@
+.my-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 750px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.my-posts__header {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 18px 22px;
+  box-shadow: 0 18px 36px rgba(46, 52, 78, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.my-posts__eyebrow {
+  margin: 0 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #7a7f9b;
+}
+
+.my-posts__header h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.my-posts__stats {
+  display: flex;
+  gap: 16px;
+}
+
+.my-posts__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  background: #f3f4ff;
+  color: #2d2f44;
+  border-radius: 12px;
+  padding: 10px 14px;
+  min-width: 80px;
+}
+
+.my-posts__stat strong {
+  font-size: 18px;
+}
+
+.my-posts__stat small {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b6f88;
+}
+
+.my-posts__composer {
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 16px 30px rgba(46, 52, 78, 0.1);
+}
+
+.my-posts__list {
+  display: grid;
+  gap: 16px;
+}
+
+.my-posts__card {
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 16px 30px rgba(46, 52, 78, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.my-posts__card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.my-posts__card p {
+  margin: 0;
+  color: #6b6f88;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.my-posts__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b6f88;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.my-posts__badge {
+  background: #e8f5ee;
+  color: #2b7a4b;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 11px;
+}
+
+.my-posts__badge--draft {
+  background: #fff3e4;
+  color: #b35c00;
+}
+
+.my-posts__date {
+  font-weight: 600;
+}
+
+.my-posts__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #8a8fa9;
+}
+
+@media (max-width: 720px) {
+  .my-posts__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .my-posts__stats {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .my-posts__stat {
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .my-posts__meta {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ByteBoard logo">
+  <defs>
+    <linearGradient id="bbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#22d3ee" />
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#bbGrad)" />
+
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2">
+    <path d="M19 16v32" />
+    <path d="M19 16h9.5c4 0 7 2.8 7 6.5s-2.8 6.5-7 6.5H19" />
+    <path d="M19 29h10.5c4.4 0 7.6 2.8 7.6 7s-3.2 7-7.6 7H19" />
+  </g>
+
+  <g transform="translate(26,0)" fill="none" stroke="#dbeafe" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2">
+    <path d="M19 16v32" />
+    <path d="M19 16h9.5c4 0 7 2.8 7 6.5s-2.8 6.5-7 6.5H19" />
+    <path d="M19 29h10.5c4.4 0 7.6 2.8 7.6 7s-3.2 7-7.6 7H19" />
+  </g>
+</svg>

@@ -1,0 +1,158 @@
+.post-card {
+  background: var(--surface);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.post-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.post-card__header img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-card__name {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.post-card__meta {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.post-card__text {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.post-card__image {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  max-height: 280px;
+}
+
+.post-card__code {
+  margin: 0;
+  background: var(--inverse-surface);
+  color: var(--inverse-text);
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  overflow-x: auto;
+}
+
+.post-card__footer {
+  display: flex;
+  gap: 12px;
+}
+
+.post-card__like-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.post-card__like-button svg {
+  width: 18px;
+  height: 18px;
+  fill: transparent;
+  stroke: #64748b;
+  stroke-width: 2;
+  transition: fill 0.2s ease, stroke 0.2s ease, transform 0.2s ease;
+}
+
+.post-card__like-button.is-liked svg {
+  fill: #ef4444;
+  stroke: #ef4444;
+}
+
+.post-card__like-button:hover svg {
+  transform: scale(1.06);
+}
+
+.post-card__like-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  box-shadow: 0 6px 12px rgba(79, 70, 229, 0.15);
+}
+
+.post-card__footer .icon-pill.saved {
+  background: var(--accent);
+  color: var(--on-accent);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
+}
+
+.post-card__footer .icon-pill.saved:hover {
+  background: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.post-edit-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 19, 34, 0.5);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.post-edit-modal__content {
+  width: min(560px, 100%);
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 20px 36px rgba(31, 36, 48, 0.2);
+}
+
+.post-edit-modal__content h3 {
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.post-edit-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-edit-modal__form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text-soft);
+  outline: none;
+  resize: vertical;
+}
+
+.post-edit-modal__form textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.post-edit-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}

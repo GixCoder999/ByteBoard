@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f4f5ff;
+  --surface-soft-2: #f2f4ff;
+  --text: #1f2430;
+  --text-soft: #2c3340;
+  --text-muted: #7b8192;
+  --border: #e7e9ff;
+  --inverse-surface: #101322;
+  --inverse-text: #f8f8ff;
+  --accent: #6366f1;
+  --accent-strong: #4f46e5;
+  --on-accent: #ffffff;
+  --card-shadow: 0 16px 32px rgba(66, 71, 97, 0.08);
+  color: var(--text);
+  background-color: var(--bg);
+  text-rendering: optimizeLegibility;
+}
+
+[data-theme='dark'] {
+  --bg: #11161d;
+  --surface: #1a212c;
+  --surface-soft: #242e3c;
+  --surface-soft-2: #273245;
+  --text: #f5f7fb;
+  --text-soft: #e2e8f0;
+  --text-muted: #a7b2c3;
+  --border: #354157;
+  --inverse-surface: #f5f7fb;
+  --inverse-text: #0f172a;
+  --card-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #6366f1, #a78bfa);
+  color: var(--on-accent);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.25);
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.35);
+}
+
+.btn--ghost {
+  background: var(--surface-soft);
+  color: var(--accent-strong);
+}
+
+.btn--ghost:hover {
+  background: var(--border);
+}
+
+.icon-button {
+  border: none;
+  background: var(--surface-soft);
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-button svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.icon-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(99, 102, 241, 0.2);
+}
+
+.pill-button {
+  border: none;
+  background: var(--surface-soft);
+  color: var(--text-soft);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pill-button.is-active,
+.pill-button:hover {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.icon-pill {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--text-soft);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.icon-pill:hover {
+  background: var(--border);
+  color: var(--accent-strong);
+  transform: translateY(-1px);
+}
+
+.tag {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+img {
+  display: block;
+}
