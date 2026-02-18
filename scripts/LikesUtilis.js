@@ -20,8 +20,8 @@ export const checkIfUserLikedPost = async (postId, userId) => {
   }
 }
 
-export const updateLikeDetails = async (postId, userId) => {
-  if (!postId || !userId) return { status: 'error' };
+export const updateLikeDetails = async (postId, userId, postOwnerId, likerName) => {
+  if (!postId || !userId || !postOwnerId) return { status: 'error' };
 
   try {
     const likeRef = doc(db, 'Likes', `${userId}_${postId}`);
@@ -40,6 +40,8 @@ export const updateLikeDetails = async (postId, userId) => {
     await setDoc(likeRef, {
       userId,
       postId,
+      postOwnerId,
+      likerName: (likerName || '').trim() || 'Someone',
       timestamp: serverTimestamp()
     });
     await updateLikesCount(postId);

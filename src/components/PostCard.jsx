@@ -122,9 +122,21 @@ const PostCard = ({
   const onLike = async () => { 
     if (!id || !currentUser?.uid || isLiking) return;
     setIsLiking(true);
+    const fallbackName = currentUser?.email?.split('@')[0] || 'Someone';
+    const likerName = (currentUser?.displayName || fallbackName).trim();
   
-    const status = await updateLikeDetails(id, currentUser?.uid);
+    const status = await updateLikeDetails(id, currentUser?.uid, authId, likerName);
     if (status?.status === 'liked') {
+      if (authId) {
+        await setDoc(doc(db, 'Notifications', `${authId}_like_${currentUser.uid}_${id}`), {
+          receiverId: authId,
+          type: 'like',
+          message: `${likerName || 'Someone'} liked your post.`,
+          actorName: likerName || 'Someone',
+          postId: id,
+          createdAt: serverTimestamp()
+        }, { merge: true });
+      }
       setIsLiked(true);
       setLikes((value) => value + 1);
     } 
@@ -150,11 +162,25 @@ const PostCard = ({
       }
       else {
         // save
+        const fallbackName = currentUser?.email?.split('@')[0] || 'Someone';
+        const saverName = (currentUser?.displayName || fallbackName).trim();
         await setDoc(doc(db, 'SavedPosts', saveDocId), {
           userId: currentUser.uid,
           id,
+          postOwnerId: authId || '',
+          saverName: saverName || 'Someone',
           timestamp: serverTimestamp()
         });
+        if (authId) {
+          await setDoc(doc(db, 'Notifications', `${authId}_save_${currentUser.uid}_${id}`), {
+            receiverId: authId,
+            type: 'save',
+            message: `${saverName || 'Someone'} saved your post.`,
+            actorName: saverName || 'Someone',
+            postId: id,
+            createdAt: serverTimestamp()
+          }, { merge: true });
+        }
         setSaved(true);
         setSavedPosts(prev => (prev.includes(id) ? prev : [...prev, id]));
       }

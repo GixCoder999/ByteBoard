@@ -8,13 +8,22 @@ import Settings from '../components/Settings'
 import './Home.css'
 import { useState } from 'react'
 
-const Home = ({ savedPosts, setSavedPosts, currentUser, userData, onProfileUpdated, onSignOut }) => {
+const Home = ({
+  savedPosts,
+  setSavedPosts,
+  currentUser,
+  userData,
+  notificationPermission,
+  onProfileUpdated,
+  onSignOut
+}) => {
   const [activeView, setActiveView] = useState('Feed')
 
   return (
     <div className="home">
       <Navbar
         currentUser={currentUser}
+        notificationPermission={notificationPermission}
         onSignOut={onSignOut}
         activeView={activeView}
         onNavigate={setActiveView}
